@@ -1,0 +1,40 @@
+.brand {
+  &__item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+    height: 72px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+    background-color: $bg-color-light;
+    &--big-cart {
+      display: flex;
+      align-items: flex-start;
+      height: 160px;
+      padding: 16px;
+      .brand__link {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+  }
+  &__link {
+    &:focus,
+    &:hover {
+      outline: 2px solid $decor-color-border;
+      outline-offset: 5px;
+    }
+    &:active {
+      outline: 2px solid $decor-color-olive;
+      outline-offset: 5px;
+    }
+  }
+  &__arrow {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+}

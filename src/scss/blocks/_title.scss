@@ -1,0 +1,25 @@
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  text-transform: uppercase;
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 40px;
+    background: url('../img/icons/side-line-icon.svg') center center / contain no-repeat;
+  }
+  &--grey {
+    display: block;
+    height: 56px;
+    padding: 16px 0 16px 16px;
+    background: linear-gradient(270deg, #f8f8f8 0%, #fff 98.61%);
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,262 @@
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    .visible--above768 {
+      display: inline-block;
+    }
+    &__repair.margin--var {
+      margin-right: 16px;
+    }
+    &__check-status.margin--var {
+      margin-right: 24px;
+    }
+  }
+  .title {
+    gap: 20px;
+    &--grey {
+      padding-left: 24px;
+    }
+  }
+  .main {
+    padding: 0 0 40px;
+  }
+  .horiz-menu {
+    margin: 0 16px 24px 24px;
+  }
+  .company-descr {
+    display: flex;
+    gap: 48px;
+    padding: 0 24px 10px;
+    &__text {
+      padding: 0;
+      flex-basis: 45%;
+    }
+    &__img-container {
+      flex-basis: 55%;
+    }
+    &__img {
+      border-radius: 7px;
+    }
+    .visible--above768 {
+      display: inline;
+    }
+  }
+  .repaired-brands {
+    padding-bottom: 32px;
+  }
+  .brand {
+    &__item-wrapper {
+      width: 224px;
+    }
+  }
+  .fade-right-320 {
+    display: none;
+  }
+  .swiper {
+    width: auto;
+    height: auto;
+    padding-top: 40px;
+    &-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 224px);
+      grid-template-rows: 72px;
+      grid-auto-rows: 72px;
+      column-gap: 24px;
+      row-gap: 16px;
+    }
+  }
+  .repaired-equipment {
+    .swiper-wrapper {
+      grid-template-rows: 160px;
+      grid-auto-rows: 160px;
+    }
+  }
+  .hide-slide {
+    display: none;
+  }
+  .click2show {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding-left: 28px;
+    border: none;
+    background-color: $bg-color-grey;
+    &::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url('../img/icons/View-all-arrows.svg') center center / contain no-repeat;
+    }
+    &::after {
+      content: 'Показать все';
+    }
+    &:focus {
+      outline: 2px solid $decor-color-border;
+      outline-offset: 5px;
+    }
+    &:hover::after {
+      color: $link-color-hover;
+      transition: color 0.2s linear;
+    }
+    &:active::after {
+      color: $link-color-active;
+      text-decoration: underline;
+      transition: all 0.2s linear;
+    }
+  }
+  .hide-carts {
+    &::before {
+      content: '';
+      background: url('../img/icons/Hide-arrows.svg') center center / contain no-repeat;
+    }
+    &::after {
+      content: 'Скрыть';
+    }
+  }
+  .prices {
+    &__descr {
+      width: 432px;
+      padding: 24px 0 16px 24px;
+    }
+    &__link-get-offer {
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1px;
+      width: auto;
+      margin-left: 24px;
+      &::after {
+        position: static;
+      }
+    }
+  }
+  .footer {
+    padding: 40px 24px 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__copyright-wrapper {
+      flex-basis: 222px;
+      align-items: flex-start;
+    }
+    &__privacy-policy {
+      flex-basis: 214px;
+    }
+    &__info-not-offer {
+      flex-basis: 213px;
+      text-align: right;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    background-color: $bg-color-grey;
+    padding: 42px 0 9px;
+    flex-direction: row;
+    justify-content: space-between;
+    &__icons-wrapper {
+      order: 1;
+      height: auto;
+    }
+    &__burger,
+    &__divider,
+    &__logo,
+    .visible--above768 {
+      display: none;
+    }
+    .visible--above1120 {
+      display: inline-block;
+    }
+    &__repair.margin--var,
+    &__check-status.margin--var {
+      margin-right: 32px;
+    }
+  }
+  .title {
+    gap: 28px;
+    &--grey {
+      padding-left: 32px;
+    }
+  }
+  .gradient-4-horiz-menu {
+    display: none;
+  }
+  .horiz-menu {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 7px;
+    margin: 0 16px 12px 32px;
+    &__link {
+      margin-bottom: 0;
+    }
+  }
+  .company-descr {
+    gap: 36px;
+    padding: 0 32px 16px;
+    &__text {
+      flex-basis: 48%;
+    }
+    &__img-container {
+      flex-basis: 52%;
+    }
+    .visible--above1120 {
+      display: inline;
+    }
+  }
+  .repaired-brands {
+    padding-bottom: 50px;
+  }
+  .brand {
+    &__item-wrapper {
+      width: 240px;
+    }
+  }
+  .swiper {
+    &-wrapper {
+      grid-template-columns: repeat(4, 240px);
+      column-gap: 32px;
+    }
+  }
+  .repaired-brands {
+    .swiper-slide {
+      &:nth-child(7),
+      &:nth-child(8) {
+        display: block;
+      }
+    }
+  }
+  .repaired-equipment {
+    .swiper-slide {
+      &:nth-child(4) {
+        display: block;
+      }
+    }
+  }
+  .prices {
+    &__descr {
+      padding: 32px 0 16px 32px;
+    }
+    &__link-get-offer {
+      margin-left: 32px;
+    }
+  }
+  .footer {
+    padding: 40px 32px 21px;
+    &__copyright-wrapper {
+      flex-basis: 222px;
+    }
+    &__privacy-policy {
+      flex-basis: 214px;
+    }
+    &__info-not-offer {
+      flex-basis: 330px;
+    }
+  }
+}

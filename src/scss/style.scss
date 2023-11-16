@@ -1,0 +1,49 @@
+@import 'libs/bootstrap-reboot.min';
+@import 'libs/fonts';
+@import 'base/variables';
+@import '/node_modules/swiper/swiper.min.css';
+@import '/node_modules/swiper/modules/pagination.min.css';
+
+* {
+  font-family: 'TT Lakes', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: $bg-color-grey;
+}
+
+.swiper {
+  position: relative;
+  width: 304px;
+  height: 128px;
+  padding-top: 16px;
+}
+
+.fade-right-320 {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  z-index: 2;
+  width: 24px;
+  height: 81px;
+  background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
+}
+
+.button-wrapper {
+  display: none;
+}
+
+@import 'blocks/text';
+@import 'blocks/visible';
+@import 'blocks/margin';
+@import 'blocks/header';
+@import 'blocks/main';
+@import 'blocks/title';
+@import 'blocks/brand-item';
+@import 'blocks/prices';
+@import 'blocks/footer';
+@import 'blocks/media';
