@@ -21,6 +21,12 @@ btnBurgerMenuHide.addEventListener('click', function () {
   page.classList.remove('overflowHidden')
 })
 
+menuOverlay.addEventListener('click', function () {
+  sideMenu.classList.remove('side-menu--show')
+  menuOverlay.classList.remove('menu-overlay--show')
+  page.classList.remove('overflowHidden')
+})
+
 // Функционал кнопки Показать все - Скрыть все
 import { clickToShowBrands, clickToShowEquip, showHideElBrands, showHideElEquip } from './btnShowHide'
 clickToShowBrands.addEventListener('click', showHideElBrands)
