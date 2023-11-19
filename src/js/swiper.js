@@ -7,6 +7,7 @@ export const swiper = new Swiper('.swiper', {
   modules: [Pagination],
   direction: 'horizontal',
   loop: true,
+  slidesPerView: 1.2,
 
   pagination: {
     el: '.swiper-pagination',
@@ -15,9 +16,6 @@ export const swiper = new Swiper('.swiper', {
   },
 
   breakpoints: {
-    320: {
-      slidesPerView: 1.2
-    },
     768: {
       enabled: false,
       slidesPerView: 'auto'

@@ -35,25 +35,8 @@
   overflow: hidden;
 }
 
-.swiper {
-  position: relative;
-  width: 304px;
-  height: 128px;
-  padding-top: 16px;
-}
-
 .click2show {
   display: none;
-}
-
-.fade-right-320 {
-  position: absolute;
-  top: 7px;
-  right: 0;
-  z-index: 2;
-  width: 24px;
-  height: 81px;
-  background: linear-gradient(270deg, #f8f8f8 16.84%, rgba(248, 248, 248, 0) 100%);
 }
 
 .button-wrapper {

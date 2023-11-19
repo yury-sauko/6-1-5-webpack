@@ -1,5 +1,6 @@
 .brand {
   &__item-wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +10,7 @@
     border-radius: 6px;
     border: 1px solid #eaeaea;
     background-color: $bg-color-light;
-    &--big-cart {
+    &--equip-cart {
       display: flex;
       align-items: flex-start;
       height: 160px;
@@ -19,6 +20,15 @@
         bottom: 16px;
         right: 16px;
       }
+    }
+    &--price-cart {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 250px;
+      height: 200px;
+      padding: 16px;
     }
   }
   &__link {
