@@ -54,6 +54,17 @@
   .brand {
     &__item-wrapper {
       width: 224px;
+      &--price-cart {
+        position: relative;
+        width: auto;
+        height: 100%;
+        padding: 0 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        border-radius: 0;
+      }
     }
   }
   .fade-swiper {
@@ -63,6 +74,30 @@
     width: auto;
     height: auto;
     padding-top: 40px;
+    &-slide:first-child > .brand__item-wrapper--price-cart {
+      border-radius: 6px 6px 0 0;
+    }
+    &-slide:last-child > .brand__item-wrapper--price-cart {
+      border-radius: 0 0 6px 6px;
+    }
+    &-slide:not(:last-child) > .brand__item-wrapper--price-cart {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        display: block;
+        width: calc(100% - 32px);
+        height: 2px;
+        background-color: $bg-color-grey;
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    &--prices {
+      padding-top: 0;
+    }
     &-wrapper {
       display: grid;
       grid-template-columns: repeat(3, 224px);
@@ -70,12 +105,17 @@
       grid-auto-rows: 72px;
       column-gap: 24px;
       row-gap: 16px;
-    }
-  }
-  .repaired-equipment {
-    .swiper-wrapper {
-      grid-template-rows: 160px;
-      grid-auto-rows: 160px;
+      &--equipment {
+        grid-template-rows: 160px;
+        grid-auto-rows: 160px;
+      }
+      &--prices {
+        padding-left: 24px;
+        grid-template-columns: calc(100vw - 48px);
+        grid-template-rows: repeat(6, minmax(64px, auto));
+        grid-auto-rows: minmax(64px, auto);
+        row-gap: 0;
+      }
     }
   }
   .hide-slide {
@@ -123,6 +163,44 @@
     }
   }
   .prices {
+    &__table-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 31px 40px 16px 40px;
+    }
+    &__service-table-header {
+      width: 350px;
+    }
+    &__price-table-header {
+      width: 75px;
+    }
+    &__duration-table-header {
+      width: 82px;
+    }
+    &__table-header-spacer {
+      width: 119px;
+    }
+    &__service-header,
+    &__price-header,
+    &__duration-header {
+      display: none;
+    }
+    &__servise-descr,
+    &__price-value {
+      margin-bottom: 0;
+    }
+    &__servise-descr {
+      width: 350px;
+    }
+    &__price-value {
+      width: 75px;
+    }
+    &__duration-value {
+      width: 82px;
+    }
+    &__order-btn {
+      position: static;
+    }
     &__descr {
       width: 432px;
       padding: 24px 0 16px 24px;
@@ -160,6 +238,7 @@
 
 @media (min-width: 1440px) {
   .container {
+    // width: auto;
     display: grid;
     grid-template-columns: 320px 1fr;
     grid-template-rows: repeat(3, min-content);
@@ -244,12 +323,30 @@
   .brand {
     &__item-wrapper {
       width: 240px;
+      &--price-cart {
+        position: relative;
+        width: auto;
+        height: 100%;
+        padding: 0 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        border-radius: 0;
+      }
     }
   }
   .swiper {
     &-wrapper {
       grid-template-columns: repeat(4, 240px);
       column-gap: 32px;
+      &--prices {
+        padding-left: 32px;
+        grid-template-columns: calc(100vw - 384px);
+        grid-template-rows: repeat(6, minmax(64px, auto));
+        grid-auto-rows: minmax(64px, auto);
+        row-gap: 0;
+      }
     }
   }
   .repaired-brands {

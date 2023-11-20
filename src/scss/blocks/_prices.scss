@@ -1,4 +1,7 @@
 .prices {
+  &__table-header {
+    display: none;
+  }
   &__service-header {
     margin-bottom: 2px;
   }
