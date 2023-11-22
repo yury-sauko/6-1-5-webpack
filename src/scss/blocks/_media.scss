@@ -105,14 +105,14 @@
       grid-auto-rows: 72px;
       column-gap: 24px;
       row-gap: 16px;
+      padding-left: 24px;
       &--equipment {
         grid-template-rows: 160px;
         grid-auto-rows: 160px;
       }
       &--prices {
-        padding-left: 24px;
         grid-template-columns: calc(100vw - 48px);
-        grid-template-rows: repeat(6, minmax(64px, auto));
+        grid-template-rows: repeat(5, minmax(64px, auto));
         grid-auto-rows: minmax(64px, auto);
         row-gap: 0;
       }
@@ -126,7 +126,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
-    padding-left: 28px;
+    padding: 24px 0 0 28px;
     border: none;
     background-color: $bg-color-grey;
     &::before {
@@ -161,6 +161,12 @@
     &::after {
       content: 'Скрыть';
     }
+  }
+  .repaired-equipment {
+    padding-bottom: 32px;
+  }
+  .orderSubmitBtn {
+    position: static;
   }
   .prices {
     &__table-header {
@@ -197,9 +203,6 @@
     }
     &__duration-value {
       width: 82px;
-    }
-    &__order-btn {
-      position: static;
     }
     &__descr {
       width: 432px;
@@ -238,9 +241,10 @@
 
 @media (min-width: 1440px) {
   .container {
-    // width: auto;
+    width: 1420px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px 1098px;
     grid-template-rows: repeat(3, min-content);
     grid-template-areas:
       'side-menu header'
@@ -248,6 +252,7 @@
       'side-menu footer';
   }
   .side-menu {
+    position: static;
     grid-area: side-menu;
     transform: translateX(0%);
     box-shadow: none;
@@ -256,6 +261,25 @@
     }
     &__nav {
       margin: 0 0 240px;
+    }
+  }
+  .modal {
+    width: 440px;
+    padding: 32px 32px 32px 0;
+    &__close {
+      margin: 0;
+      position: absolute;
+      top: 32px;
+      left: -72px;
+    }
+    &__input-text,
+    &__input-tel,
+    &__input-email {
+      width: 376px;
+      margin: 0 0 16px 32px;
+    }
+    &__submit-text {
+      margin: 0 0 23px 32px;
     }
   }
   .header {
@@ -306,7 +330,7 @@
   }
   .company-descr {
     gap: 36px;
-    padding: 0 32px 16px;
+    padding: 0 32px 32px;
     &__text {
       flex-basis: 48%;
     }
@@ -317,9 +341,6 @@
       display: inline;
     }
   }
-  .repaired-brands {
-    padding-bottom: 50px;
-  }
   .brand {
     &__item-wrapper {
       width: 240px;
@@ -327,7 +348,7 @@
         position: relative;
         width: auto;
         height: 100%;
-        padding: 0 16px;
+        padding: 0 24px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -339,17 +360,18 @@
   .swiper {
     &-wrapper {
       grid-template-columns: repeat(4, 240px);
-      column-gap: 32px;
+      column-gap: 25px;
+      padding-left: 32px;
       &--prices {
-        padding-left: 32px;
-        grid-template-columns: calc(100vw - 384px);
-        grid-template-rows: repeat(6, minmax(64px, auto));
+        grid-template-columns: 1036px;
+        grid-template-rows: repeat(5, minmax(64px, auto));
         grid-auto-rows: minmax(64px, auto);
         row-gap: 0;
       }
     }
   }
   .repaired-brands {
+    padding-bottom: 50px;
     .swiper-slide {
       &:nth-child(7),
       &:nth-child(8) {
@@ -358,6 +380,7 @@
     }
   }
   .repaired-equipment {
+    padding-bottom: 50px;
     .swiper-slide {
       &:nth-child(4) {
         display: block;
@@ -365,6 +388,9 @@
     }
   }
   .prices {
+    &__table-header {
+      padding: 31px 56px 16px 56px;
+    }
     &__descr {
       padding: 32px 0 16px 32px;
     }

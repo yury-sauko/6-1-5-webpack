@@ -3,20 +3,15 @@
   margin: 0;
   padding: 0;
 }
-
 .page {
   background-color: $bg-color-grey;
 }
-
 .container {
-  // max-width: 1440px;
-  margin: 0 auto;
   background-color: $bg-color-grey;
   border-left: 1px solid $decor-color-border;
   border-right: 1px solid $decor-color-border;
 }
-
-.menu-overlay {
+.overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -26,19 +21,20 @@
   background-color: $bg-color-light;
   opacity: 0.95;
   z-index: 2;
-  &--show {
+  &--show-with-menu {
     display: block;
   }
+  &--show-with-modal {
+    display: block;
+    z-index: 4;
+  }
 }
-
 .overflowHidden {
   overflow: hidden;
 }
-
 .click2show {
   display: none;
 }
-
 .button-wrapper {
   display: none;
 }

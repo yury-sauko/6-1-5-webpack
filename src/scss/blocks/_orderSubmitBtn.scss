@@ -1,0 +1,45 @@
+.orderSubmitBtn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 119px;
+  height: 32px;
+  padding: 0 8px 0 12px;
+  border-radius: 16px;
+  background-color: #ff3e79;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-decoration: none;
+  &::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('../img/icons/get-offer-arrow.svg') center center / contain no-repeat;
+  }
+  &:focus {
+    outline: 2px solid $decor-color-border;
+    outline-offset: 5px;
+  }
+  &:hover {
+    filter: opacity(70%);
+    transition: filter 0.2s linear;
+  }
+  &:active {
+    filter: opacity(40%);
+    transition: filter 0.2s linear;
+  }
+  &--modal {
+    position: static;
+    width: 136px;
+    margin-left: auto;
+    border: none;
+  }
+}
