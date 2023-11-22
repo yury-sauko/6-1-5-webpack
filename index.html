@@ -10,7 +10,8 @@
 <link href="style.css" rel="stylesheet"></head>
 <body class="page">
   <div class="container">
-    <div class="menu-overlay"></div>
+    <div class="overlay"></div>
+
     <div class="side-menu">
       <div class="side-menu__header">
         <div class="side-menu__close side-menu__link-img" tabindex="0">
@@ -25,10 +26,10 @@
       </div>
 
       <ul class="side-menu__nav">
-        <li class="side-menu__item side-menu__before-item-line">
+        <li class="side-menu__item">
           <a href="#" class="side-menu__link text text--color-grey text--fz16-fw500">Ремонт техники</a>
         </li>
-        <li class="side-menu__item">
+        <li class="side-menu__item side-menu__before-item-line">
           <a href="#" class="side-menu__link text text--color-grey text--fz16-fw500">Услуги и сервисы</a>
         </li>
         <li class="side-menu__item">
@@ -53,10 +54,10 @@
 
       <div class="side-menu__footer">
         <div class="side-menu__footer-icons">
-          <button class="side-menu__footer-icon side-menu__btn side-menu__link-img">
+          <button class="side-menu__footer-icon side-menu__btn side-menu__link-img showModalCall">
             <img src="img/icons/call-icon.svg" alt="call icon" class="side-menu__footer-icon-img">
           </button>
-          <button class="side-menu__footer-icon side-menu__btn side-menu__link-img">
+          <button class="side-menu__footer-icon side-menu__btn side-menu__link-img showModalFeedback">
             <img src="img/icons/chat-icon.svg" alt="chat icon" class="side-menu__footer-icon-img">
           </button>
           <button class="side-menu__footer-icon side-menu__btn side-menu__link-img">
@@ -75,6 +76,39 @@
       </div>
     </div>
 
+    <form action="#" name="modalCall" class="modal">
+      <div class="modal__close" tabindex="0">
+        <img src="img/icons/close-icon.svg" alt="close icon" class="modal__close-img">
+      </div>
+      <h2 class="title title--modal text text--color-dark text--fz24-fw700">Заказать звонок</h2>
+
+      <input type="tel" name="userPhone" placeholder="Телефон" class="modal__input-tel text text--color-grey text--fz16-fw500">
+
+      <p class="modal__submit-text text text--color-grey text--fw500-lh16">
+        Нажимая “отправить”, вы даете согласие на <a href="#" class="modal__submit-text-link">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="modal__submit-text-link">политикой конфиденциальности</a>
+      </p>
+
+      <button type="submit" name="submitModalCall" class="orderSubmitBtn orderSubmitBtn--modal">ОТПРАВИТЬ</button>
+    </form>
+
+    <form action="#" name="modalFeedback" class="modal">
+      <div class="modal__close" tabindex="0">
+        <img src="img/icons/close-icon.svg" alt="close icon" class="modal__close-img">
+      </div>
+      <h2 class="title title--modal text text--color-dark text--fz24-fw700">Обратная связь</h2>
+
+      <input type="text" name="userName" placeholder="Имя" class="modal__input-text text text--color-grey text--fz16-fw500">
+      <input type="tel" name="userPhone" placeholder="Телефон" class="modal__input-tel text text--color-grey text--fz16-fw500">
+      <input type="email" name="userEmail" placeholder="Электронная почта" class="modal__input-email text text--color-grey text--fz16-fw500">
+      <textarea name="userMessage" placeholder="Сообщение" class="modal__input-text modal__input-text--message text text--color-grey text--fz16-fw500"></textarea>
+
+      <p class="modal__submit-text text text--color-grey text--fw500-lh16">
+        Нажимая “отправить”, вы даете согласие на <a href="#" class="modal__submit-text-link">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="modal__submit-text-link">политикой конфиденциальности</a>
+      </p>
+
+      <button type="submit" name="submitModalFeedback" class="orderSubmitBtn orderSubmitBtn--modal">ОТПРАВИТЬ</button>
+    </form>
+
     <header class="header">
       <div class="header__icons-wrapper">
         <a href="#" class="header__burger header__link margin--var">
@@ -84,10 +118,10 @@
         <a href="#" class="header__logo header__link margin--mr-auto">
           <img src="img/CPS-logo.svg" alt="CPS logo" class="header__logo-img">
         </a>
-        <a href="#" class="header__call header__link margin--mr16 visible--above768">
+        <a href="#" class="header__call header__link margin--mr16 visible--above768 showModalCall">
           <img src="img/icons/call-icon.svg" alt="call icon" class="header__link-img">
         </a>
-        <a href="#" class="header__chat header__link margin--mr16 visible--above768">
+        <a href="#" class="header__chat header__link margin--mr16 visible--above768 showModalFeedback">
           <img src="img/icons/chat-icon.svg" alt="chat icon" class="header__link-img">
         </a>
         <a href="#" class="header__profile header__link margin--mr20 visible--above768">
@@ -361,7 +395,7 @@
                 <span class="prices__duration-header text text--color-grey text--fw500-lh16">Срок</span>
                 <span class="prices__duration-value text text--color-dark">30 мин</span>
 
-                <a href="#" class="prices__order-btn">Заказать</a>
+                <a href="#" class="orderSubmitBtn">Заказать</a>
               </div>
             </li>
             <li class="swiper-slide">
@@ -375,7 +409,7 @@
                 <span class="prices__duration-header text text--color-grey text--fw500-lh16">Срок</span>
                 <span class="prices__duration-value text text--color-dark">30-120 мин</span>
 
-                <a href="#" class="prices__order-btn">Заказать</a>
+                <a href="#" class="orderSubmitBtn">Заказать</a>
               </div>
             </li>
             <li class="swiper-slide">
@@ -389,7 +423,7 @@
                 <span class="prices__duration-header text text--color-grey text--fw500-lh16">Срок</span>
                 <span class="prices__duration-value text text--color-dark">30-120 мин</span>
 
-                <a href="#" class="prices__order-btn">Заказать</a>
+                <a href="#" class="orderSubmitBtn">Заказать</a>
               </div>
             </li>
             <li class="swiper-slide">
@@ -403,7 +437,7 @@
                 <span class="prices__duration-header text text--color-grey text--fw500-lh16">Срок</span>
                 <span class="prices__duration-value text text--color-dark">30-120 мин</span>
 
-                <a href="#" class="prices__order-btn">Заказать</a>
+                <a href="#" class="orderSubmitBtn">Заказать</a>
               </div>
             </li>
             <li class="swiper-slide">
@@ -417,7 +451,7 @@
                 <span class="prices__duration-header text text--color-grey text--fw500-lh16">Срок</span>
                 <span class="prices__duration-value text text--color-dark">30-120 мин</span>
 
-                <a href="#" class="prices__order-btn">Заказать</a>
+                <a href="#" class="orderSubmitBtn">Заказать</a>
               </div>
             </li>
           </ul>

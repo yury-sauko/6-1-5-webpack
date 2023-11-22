@@ -839,12 +839,11 @@ button.swiper-pagination-bullet {
   background-color: #F8F8F8; }
 
 .container {
-  margin: 0 auto;
   background-color: #F8F8F8;
   border-left: 1px solid #B8FFEC;
   border-right: 1px solid #B8FFEC; }
 
-.menu-overlay {
+.overlay {
   display: none;
   position: fixed;
   top: 0;
@@ -854,8 +853,11 @@ button.swiper-pagination-bullet {
   background-color: #fff;
   opacity: 0.95;
   z-index: 2; }
-  .menu-overlay--show {
+  .overlay--show-with-menu {
     display: block; }
+  .overlay--show-with-modal {
+    display: block;
+    z-index: 4; }
 
 .overflowHidden {
   overflow: hidden; }
@@ -1039,6 +1041,108 @@ button.swiper-pagination-bullet {
     transform: translateX(0%);
     transition: transform 0.3s linear; }
 
+.orderSubmitBtn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  width: 119px;
+  height: 32px;
+  padding: 0 8px 0 12px;
+  border-radius: 16px;
+  background-color: #ff3e79;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-decoration: none; }
+  .orderSubmitBtn::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(./static/get-offer-arrow.svg) center center/contain no-repeat; }
+  .orderSubmitBtn:focus {
+    outline: 2px solid #B8FFEC;
+    outline-offset: 5px; }
+  .orderSubmitBtn:hover {
+    filter: opacity(70%);
+    transition: filter 0.2s linear; }
+  .orderSubmitBtn:active {
+    filter: opacity(40%);
+    transition: filter 0.2s linear; }
+  .orderSubmitBtn--modal {
+    position: static;
+    width: 136px;
+    margin-left: auto;
+    border: none; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
+  height: 100%;
+  width: 320px;
+  border-left: 1px solid #B8FFEC;
+  padding: 24px 16px 24px 0;
+  background-color: #fff;
+  overflow: auto;
+  z-index: 5; }
+  .modal__close {
+    display: inline-block;
+    margin: 0 0 32px 16px; }
+    .modal__close:focus {
+      outline: 2px solid #B8FFEC;
+      outline-offset: 5px; }
+    .modal__close:hover {
+      filter: opacity(70%);
+      transition: filter 0.2s linear; }
+    .modal__close:active {
+      filter: opacity(40%);
+      transition: filter 0.2s linear; }
+  .modal__close-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; }
+  .modal__input-text, .modal__input-tel, .modal__input-email {
+    width: 288px;
+    height: 48px;
+    padding: 12px 16px;
+    margin: 0 0 16px 16px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px; }
+    .modal__input-text::placeholder, .modal__input-tel::placeholder, .modal__input-email::placeholder {
+      color: #b5b6bc; }
+    .modal__input-text:focus, .modal__input-text:hover, .modal__input-text:active, .modal__input-tel:focus, .modal__input-tel:hover, .modal__input-tel:active, .modal__input-email:focus, .modal__input-email:hover, .modal__input-email:active {
+      outline: 2px solid #B8FFEC; }
+  .modal__input-text--message {
+    height: 288px;
+    resize: none; }
+  .modal__submit-text {
+    margin: 0 0 18px 16px; }
+  .modal__submit-text-link {
+    color: #ff3e79;
+    text-decoration: none; }
+    .modal__submit-text-link:focus, .modal__submit-text-link:hover {
+      outline: none;
+      color: #0d6efd;
+      text-decoration: underline;
+      transition: color 0.2s linear; }
+    .modal__submit-text-link:active {
+      outline: none;
+      color: #0a58ca;
+      text-decoration: underline;
+      transition: color 0.2s linear; }
+  .modal--show {
+    transform: translateX(0%);
+    transition: transform 0.3s linear; }
+
 .header {
   background-color: #fff;
   display: flex;
@@ -1170,6 +1274,9 @@ button.swiper-pagination-bullet {
     .title--grey::before {
       content: '';
       display: none; }
+  .title--modal {
+    text-transform: none;
+    margin-bottom: 24px; }
 
 .brand__item-wrapper {
   position: relative;
@@ -1231,32 +1338,6 @@ button.swiper-pagination-bullet {
 .prices__duration-header {
   margin-bottom: 2px; }
 
-.prices__order-btn {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  display: inline-flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 8px;
-  width: 119px;
-  height: 32px;
-  padding: 0 8px 0 12px;
-  border-radius: 16px;
-  background-color: #ff3e79;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 24px;
-  text-transform: uppercase;
-  text-decoration: none; }
-  .prices__order-btn::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: url(./static/get-offer-arrow.svg) center center/contain no-repeat; }
-
 .prices__descr {
   padding: 16px 24px 16px 16px;
   margin: 0; }
@@ -1274,7 +1355,7 @@ button.swiper-pagination-bullet {
     right: 60px;
     width: 24px;
     height: 24px;
-    background: url(./static/get-offer-arrow.svg) center center/contain no-repeat; }
+    background: url(./static/get-offer-arrow-red.svg) center center/contain no-repeat; }
   .prices__link-get-offer:focus {
     outline: 2px solid #B8FFEC;
     outline-offset: 5px; }
@@ -1287,7 +1368,7 @@ button.swiper-pagination-bullet {
     transition: color 0.2s linear; }
 
 .footer {
-  padding: 16px 0 19px;
+  padding: 16px 8px 19px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1389,14 +1470,14 @@ button.swiper-pagination-bullet {
       grid-template-rows: 72px;
       grid-auto-rows: 72px;
       column-gap: 24px;
-      row-gap: 16px; }
+      row-gap: 16px;
+      padding-left: 24px; }
       .swiper-wrapper--equipment {
         grid-template-rows: 160px;
         grid-auto-rows: 160px; }
       .swiper-wrapper--prices {
-        padding-left: 24px;
         grid-template-columns: calc(100vw - 48px);
-        grid-template-rows: repeat(6, minmax(64px, auto));
+        grid-template-rows: repeat(5, minmax(64px, auto));
         grid-auto-rows: minmax(64px, auto);
         row-gap: 0; }
   .hide-slide {
@@ -1406,7 +1487,7 @@ button.swiper-pagination-bullet {
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
-    padding-left: 28px;
+    padding: 24px 0 0 28px;
     border: none;
     background-color: #F8F8F8; }
     .click2show::before {
@@ -1432,6 +1513,10 @@ button.swiper-pagination-bullet {
     background: url(./static/Hide-arrows.svg) center center/contain no-repeat; }
   .hide-carts::after {
     content: 'Скрыть'; }
+  .repaired-equipment {
+    padding-bottom: 32px; }
+  .orderSubmitBtn {
+    position: static; }
   .prices__table-header {
     display: flex;
     justify-content: space-between;
@@ -1454,8 +1539,6 @@ button.swiper-pagination-bullet {
     width: 75px; }
   .prices__duration-value {
     width: 82px; }
-  .prices__order-btn {
-    position: static; }
   .prices__descr {
     width: 432px;
     padding: 24px 0 16px 24px; }
@@ -1484,11 +1567,14 @@ button.swiper-pagination-bullet {
 
 @media (min-width: 1440px) {
   .container {
+    width: 1420px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 320px 1098px;
     grid-template-rows: repeat(3, min-content);
     grid-template-areas: 'side-menu header' 'side-menu main' 'side-menu footer'; }
   .side-menu {
+    position: static;
     grid-area: side-menu;
     transform: translateX(0%);
     box-shadow: none; }
@@ -1496,6 +1582,19 @@ button.swiper-pagination-bullet {
       display: none; }
     .side-menu__nav {
       margin: 0 0 240px; }
+  .modal {
+    width: 440px;
+    padding: 32px 32px 32px 0; }
+    .modal__close {
+      margin: 0;
+      position: absolute;
+      top: 32px;
+      left: -72px; }
+    .modal__input-text, .modal__input-tel, .modal__input-email {
+      width: 376px;
+      margin: 0 0 16px 32px; }
+    .modal__submit-text {
+      margin: 0 0 23px 32px; }
   .header {
     grid-area: header;
     background-color: #F8F8F8;
@@ -1530,22 +1629,20 @@ button.swiper-pagination-bullet {
       margin-bottom: 0; }
   .company-descr {
     gap: 36px;
-    padding: 0 32px 16px; }
+    padding: 0 32px 32px; }
     .company-descr__text {
       flex-basis: 48%; }
     .company-descr__img-container {
       flex-basis: 52%; }
     .company-descr .visible--above1120 {
       display: inline; }
-  .repaired-brands {
-    padding-bottom: 50px; }
   .brand__item-wrapper {
     width: 240px; }
     .brand__item-wrapper--price-cart {
       position: relative;
       width: auto;
       height: 100%;
-      padding: 0 16px;
+      padding: 0 24px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -1553,17 +1650,23 @@ button.swiper-pagination-bullet {
       border-radius: 0; }
   .swiper-wrapper {
     grid-template-columns: repeat(4, 240px);
-    column-gap: 32px; }
+    column-gap: 25px;
+    padding-left: 32px; }
     .swiper-wrapper--prices {
-      padding-left: 32px;
-      grid-template-columns: calc(100vw - 384px);
-      grid-template-rows: repeat(6, minmax(64px, auto));
+      grid-template-columns: 1036px;
+      grid-template-rows: repeat(5, minmax(64px, auto));
       grid-auto-rows: minmax(64px, auto);
       row-gap: 0; }
-  .repaired-brands .swiper-slide:nth-child(7), .repaired-brands .swiper-slide:nth-child(8) {
-    display: block; }
-  .repaired-equipment .swiper-slide:nth-child(4) {
-    display: block; }
+  .repaired-brands {
+    padding-bottom: 50px; }
+    .repaired-brands .swiper-slide:nth-child(7), .repaired-brands .swiper-slide:nth-child(8) {
+      display: block; }
+  .repaired-equipment {
+    padding-bottom: 50px; }
+    .repaired-equipment .swiper-slide:nth-child(4) {
+      display: block; }
+  .prices__table-header {
+    padding: 31px 56px 16px 56px; }
   .prices__descr {
     padding: 32px 0 16px 32px; }
   .prices__link-get-offer {
